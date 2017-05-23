@@ -203,7 +203,7 @@ namespace Sales_Manager
                 var accounts = db.Accounts.ToList();
                 var index = comboBoxAccounts.SelectedIndex;
                 comboBoxAccounts.DataSource = accounts;
-                if (index != -1)
+                if (index != -1 && comboBoxAccounts.Items.Count - 1 >= index)
                 {
                     comboBoxAccounts.SelectedIndex = index;
                 }
@@ -231,7 +231,7 @@ namespace Sales_Manager
                     products = db.Products.Include(product => product.Account).Where(product => product.Account == null);
                 }
                 comboBoxProducts.DataSource = products.ToList();
-                if (index != -1)
+                if (index != -1 && comboBoxProducts.Items.Count - 1 >= index)
                 {
                     comboBoxProducts.SelectedIndex = index;
                 }
