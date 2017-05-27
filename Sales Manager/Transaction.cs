@@ -5,8 +5,6 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Windows.Forms;
-using Sales_Manager.Properties;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 
@@ -100,7 +98,7 @@ namespace Sales_Manager
             }
         }
 
-        public static void GetSales(DateTime fromDate, DateTime toDate, Account account, BackgroundWorker backgroundWorker)
+        public static bool GetSales(DateTime fromDate, DateTime toDate, Account account, BackgroundWorker backgroundWorker)
         {
             List<Transaction> transactions = new List<Transaction>();
             JArray jOrderInfoArray = new JArray();
@@ -130,9 +128,7 @@ namespace Sales_Manager
                 }
                 catch (WebException)
                 {
-                    MessageBox.Show(Resources.noInternetErrorMsg, Resources.noInternetErrorCaption, MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    return;
+                    return false;
                 }
             }
             int progress = 0;
@@ -287,6 +283,7 @@ namespace Sales_Manager
                 }
                 db.SaveChanges();
             }
+            return true;
         }
 
         private static WebResponse EnvatoAPIRequest(string url, Account account)

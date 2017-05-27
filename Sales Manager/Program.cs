@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
-using Microsoft.VisualBasic.ApplicationServices;
 
 
 namespace Sales_Manager
@@ -13,32 +15,30 @@ namespace Sales_Manager
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            FormMain formMain = new FormMain();
-            SingleInstanceApplication.Run(formMain, StartupHandler);
-        }
+            string appGuid =
+            ((GuidAttribute)
+                Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(GuidAttribute), false).GetValue(0)).Value;
 
-        private static void StartupHandler(object sender, StartupNextInstanceEventArgs startupNextInstanceEventArgs)
-        {
-            startupNextInstanceEventArgs.BringToForeground = true;
-        }
+            Mutex mutex = new Mutex(true, $"{{{appGuid}}}");
 
-
-        private class SingleInstanceApplication : WindowsFormsApplicationBase
-        {
-            private SingleInstanceApplication()
+            if (mutex.WaitOne(TimeSpan.Zero, true))
             {
-                IsSingleInstance = true;
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new FormMain());
+                mutex.ReleaseMutex();
+            }
+            else
+            {
+                // send our Win32 message to make the currently running instance
+                // jump on top of all the other windows
+                NativeMethods.PostMessage(
+                    (IntPtr)NativeMethods.HWND_BROADCAST,
+                    NativeMethods.WM_SHOWME,
+                    IntPtr.Zero,
+                    IntPtr.Zero);
             }
 
-            public static void Run(Form form, StartupNextInstanceEventHandler startupHandler)
-            {
-                SingleInstanceApplication app = new SingleInstanceApplication { MainForm = form };
-                app.StartupNextInstance += startupHandler;
-                app.Run(Environment.GetCommandLineArgs());
-            }
         }
-
     }
 }

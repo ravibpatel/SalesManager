@@ -110,7 +110,7 @@ namespace Sales_Manager
             }
             _timer = new Timer
             {
-                Interval = Settings.Default.AutoRefreshInterval,
+                Interval = 60 * 1000,
                 Enabled = true
             };
             _timer.Tick += toolStripButtonUpdate_Click;
@@ -154,9 +154,33 @@ namespace Sales_Manager
             Settings.Default.Save();
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == NativeMethods.WM_SHOWME)
+            {
+                ShowMe();
+            }
+            base.WndProc(ref m);
+        }
+
         #endregion
 
         #region Methods
+
+        private void ShowMe()
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                Restore();
+            }
+            // get our current "TopMost" value (ours will always be false though)
+            bool top = TopMost;
+            // make our form jump to the top of everything
+            TopMost = true;
+            // set it back to whatever it was
+            TopMost = top;
+        }
+
 
         private void GetAccountsList()
         {
@@ -201,11 +225,15 @@ namespace Sales_Manager
             using (var db = new SalesManagerContext())
             {
                 var accounts = db.Accounts.ToList();
-                var index = comboBoxAccounts.SelectedIndex;
+                var selectedText = ((Account) comboBoxAccounts.SelectedItem)?.Name;
                 comboBoxAccounts.DataSource = accounts;
-                if (index != -1 && comboBoxAccounts.Items.Count - 1 >= index)
+                foreach (var item in comboBoxAccounts.Items)
                 {
-                    comboBoxAccounts.SelectedIndex = index;
+                    Account account = item as Account;
+                    if (account != null && account.Name.Equals(selectedText))
+                    {
+                        comboBoxAccounts.SelectedItem = item;
+                    }
                 }
                 if (accounts.Count.Equals(0))
                 {
@@ -218,7 +246,7 @@ namespace Sales_Manager
         {
             using (var db = new SalesManagerContext())
             {
-                var index = comboBoxProducts.SelectedIndex;
+                var selectedText = ((Product) comboBoxProducts.SelectedItem)?.Name;
                 IQueryable<Product> products;
                 var account = (Account)comboBoxAccounts.SelectedItem;
                 if (account != null)
@@ -231,9 +259,13 @@ namespace Sales_Manager
                     products = db.Products.Include(product => product.Account).Where(product => product.Account == null);
                 }
                 comboBoxProducts.DataSource = products.ToList();
-                if (index != -1 && comboBoxProducts.Items.Count - 1 >= index)
+                foreach (var item in comboBoxProducts.Items)
                 {
-                    comboBoxProducts.SelectedIndex = index;
+                    Product product = item as Product;
+                    if (product != null && product.Name.Equals(selectedText))
+                    {
+                        comboBoxProducts.SelectedItem = item;
+                    }
                 }
             }
         }
@@ -624,16 +656,38 @@ namespace Sales_Manager
             if (!_lock)
             {
                 _lock = true;
+                var totalTransactions = objectListViewTransactions.Items.Count;
                 var loadingForm = new GetSales(dateTimePickerFrom.Value, dateTimePickerTo.Value,
                     (Account)comboBoxAccounts.SelectedItem);
-                loadingForm.ShowDialog();
-                toolStripButtonEdit.Enabled = false;
-                toolStripButtonRemove.Enabled = false;
-                dateTimePicker_ValueChanged(sender, e);
-                GetCountriesList();
-                GetProductsList();
-                RefreshProductsComboBox();
-                _lock = false;
+                if (loadingForm.ShowDialog().Equals(DialogResult.OK))
+                {
+                    toolStripButtonEdit.Enabled = false;
+                    toolStripButtonRemove.Enabled = false;
+                    dateTimePicker_ValueChanged(sender, e);
+                    GetCountriesList();
+                    GetProductsList();
+                    RefreshProductsComboBox();
+                    var newSales = objectListViewTransactions.Items.Count - totalTransactions;
+                    if (notifyIcon.Visible && newSales > 0)
+                    {
+                        notifyIcon.ShowBalloonTip(5, "New Sales", $"There are {newSales} new sales since you last updated.", ToolTipIcon.Info);
+                    }
+                    _lock = false;
+                }
+                else
+                {
+                    _lock = false;
+                    if (!sender.Equals(_timer))
+                    {
+                        MessageBox.Show(Resources.noInternetErrorMsg, Resources.noInternetErrorCaption,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        toolStripButtonUpdate_Click(sender, e);
+                    }
+                }
             }
         }
 
@@ -770,6 +824,11 @@ namespace Sales_Manager
             {
                 Restore();
             }
+        }
+
+        private void notifyIcon_BalloonTipClicked(object sender, EventArgs e)
+        {
+            Restore();
         }
 
         #endregion

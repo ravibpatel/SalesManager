@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -389,9 +389,9 @@
             this.labelTotal.AutoSize = true;
             this.labelTotal.Location = new System.Drawing.Point(6, 25);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(19, 13);
+            this.labelTotal.Size = new System.Drawing.Size(34, 13);
             this.labelTotal.TabIndex = 0;
-            this.labelTotal.Text = "$0";
+            this.labelTotal.Text = "$0.00";
             // 
             // groupBoxPartnerShare
             // 
@@ -408,9 +408,9 @@
             this.labelPartnerShare.AutoSize = true;
             this.labelPartnerShare.Location = new System.Drawing.Point(6, 25);
             this.labelPartnerShare.Name = "labelPartnerShare";
-            this.labelPartnerShare.Size = new System.Drawing.Size(19, 13);
+            this.labelPartnerShare.Size = new System.Drawing.Size(34, 13);
             this.labelPartnerShare.TabIndex = 0;
-            this.labelPartnerShare.Text = "$0";
+            this.labelPartnerShare.Text = "$0.00";
             // 
             // groupBoxIncome
             // 
@@ -427,9 +427,9 @@
             this.labelIncome.AutoSize = true;
             this.labelIncome.Location = new System.Drawing.Point(6, 26);
             this.labelIncome.Name = "labelIncome";
-            this.labelIncome.Size = new System.Drawing.Size(19, 13);
+            this.labelIncome.Size = new System.Drawing.Size(34, 13);
             this.labelIncome.TabIndex = 0;
-            this.labelIncome.Text = "$0";
+            this.labelIncome.Text = "$0.00";
             // 
             // groupBoxMonthYear
             // 
@@ -650,7 +650,7 @@
             this.tabPageCountries.Location = new System.Drawing.Point(4, 22);
             this.tabPageCountries.Name = "tabPageCountries";
             this.tabPageCountries.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCountries.Size = new System.Drawing.Size(894, 525);
+            this.tabPageCountries.Size = new System.Drawing.Size(903, 536);
             this.tabPageCountries.TabIndex = 1;
             this.tabPageCountries.Text = "Countries";
             this.tabPageCountries.UseVisualStyleBackColor = true;
@@ -670,7 +670,7 @@
             this.objectListViewCountries.Location = new System.Drawing.Point(3, 3);
             this.objectListViewCountries.Name = "objectListViewCountries";
             this.objectListViewCountries.ShowGroups = false;
-            this.objectListViewCountries.Size = new System.Drawing.Size(888, 519);
+            this.objectListViewCountries.Size = new System.Drawing.Size(897, 530);
             this.objectListViewCountries.TabIndex = 0;
             this.objectListViewCountries.UseCompatibleStateImageBehavior = false;
             this.objectListViewCountries.View = System.Windows.Forms.View.Details;
@@ -696,7 +696,7 @@
             this.tabPageProducts.Location = new System.Drawing.Point(4, 22);
             this.tabPageProducts.Name = "tabPageProducts";
             this.tabPageProducts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProducts.Size = new System.Drawing.Size(894, 525);
+            this.tabPageProducts.Size = new System.Drawing.Size(903, 536);
             this.tabPageProducts.TabIndex = 2;
             this.tabPageProducts.Text = "Products";
             this.tabPageProducts.UseVisualStyleBackColor = true;
@@ -724,7 +724,7 @@
             this.objectListViewProducts.Location = new System.Drawing.Point(3, 3);
             this.objectListViewProducts.Name = "objectListViewProducts";
             this.objectListViewProducts.ShowGroups = false;
-            this.objectListViewProducts.Size = new System.Drawing.Size(888, 519);
+            this.objectListViewProducts.Size = new System.Drawing.Size(897, 530);
             this.objectListViewProducts.TabIndex = 0;
             this.objectListViewProducts.UseCompatibleStateImageBehavior = false;
             this.objectListViewProducts.View = System.Windows.Forms.View.Details;
@@ -777,7 +777,7 @@
             this.tabPageAccounts.Location = new System.Drawing.Point(4, 22);
             this.tabPageAccounts.Name = "tabPageAccounts";
             this.tabPageAccounts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAccounts.Size = new System.Drawing.Size(894, 525);
+            this.tabPageAccounts.Size = new System.Drawing.Size(903, 536);
             this.tabPageAccounts.TabIndex = 4;
             this.tabPageAccounts.Text = "Accounts";
             this.tabPageAccounts.UseVisualStyleBackColor = true;
@@ -797,7 +797,7 @@
             this.objectListViewAccounts.Location = new System.Drawing.Point(3, 3);
             this.objectListViewAccounts.Name = "objectListViewAccounts";
             this.objectListViewAccounts.ShowGroups = false;
-            this.objectListViewAccounts.Size = new System.Drawing.Size(888, 519);
+            this.objectListViewAccounts.Size = new System.Drawing.Size(897, 530);
             this.objectListViewAccounts.TabIndex = 1;
             this.objectListViewAccounts.UseCompatibleStateImageBehavior = false;
             this.objectListViewAccounts.View = System.Windows.Forms.View.Details;
@@ -824,27 +824,27 @@
             this.tabPageGraph.Location = new System.Drawing.Point(4, 22);
             this.tabPageGraph.Name = "tabPageGraph";
             this.tabPageGraph.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGraph.Size = new System.Drawing.Size(894, 525);
+            this.tabPageGraph.Size = new System.Drawing.Size(903, 536);
             this.tabPageGraph.TabIndex = 3;
             this.tabPageGraph.Text = "Graph";
             this.tabPageGraph.UseVisualStyleBackColor = true;
             // 
             // chart
             // 
-            chartArea2.AxisX.Interval = 1D;
-            chartArea2.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
-            chartArea2.Name = "ChartArea";
-            this.chart.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.Interval = 1D;
+            chartArea1.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
+            chartArea1.Name = "ChartArea";
+            this.chart.ChartAreas.Add(chartArea1);
             this.chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(3, 3);
             this.chart.Name = "chart";
-            series2.ChartArea = "ChartArea";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart.Series.Add(series2);
-            this.chart.Size = new System.Drawing.Size(888, 519);
+            series1.ChartArea = "ChartArea";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart.Series.Add(series1);
+            this.chart.Size = new System.Drawing.Size(897, 530);
             this.chart.TabIndex = 0;
             this.chart.GetToolTipText += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs>(this.chart_GetToolTipText);
             // 
@@ -965,7 +965,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1053,7 +1053,7 @@
             // 
             this.helpToolStripMenuItem.Image = global::Sales_Manager.Properties.Resources.book;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -1061,7 +1061,7 @@
             // 
             this.supportToolStripMenuItem.Image = global::Sales_Manager.Properties.Resources.comment_box;
             this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            this.supportToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.supportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.supportToolStripMenuItem.Text = "Support";
             this.supportToolStripMenuItem.Click += new System.EventHandler(this.supportToolStripMenuItem_Click);
             // 
@@ -1069,7 +1069,7 @@
             // 
             this.aboutToolStripMenuItem.Image = global::Sales_Manager.Properties.Resources.info_rhombus;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1085,6 +1085,7 @@
             this.notifyIcon.ContextMenuStrip = this.contextMenuStripNotifyIcon;
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "Sales Manager";
+            this.notifyIcon.BalloonTipClicked += new System.EventHandler(this.notifyIcon_BalloonTipClicked);
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
             // contextMenuStripNotifyIcon
