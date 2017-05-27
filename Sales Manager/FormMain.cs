@@ -110,7 +110,7 @@ namespace Sales_Manager
             }
             _timer = new Timer
             {
-                Interval = 60 * 1000,
+                Interval = Settings.Default.AutoRefreshInterval,
                 Enabled = true
             };
             _timer.Tick += toolStripButtonUpdate_Click;
