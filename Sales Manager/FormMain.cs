@@ -17,9 +17,9 @@ namespace Sales_Manager
 {
     public partial class FormMain : Form
     {
-        private bool _lock;
-
         private readonly Timer _timer;
+
+        private GetSales _loadingForm;
 
         #region Form Events
 
@@ -286,6 +286,10 @@ namespace Sales_Manager
         {
             Show();
             NativeMethods.ShowWindow(Handle, NativeMethods.SW_RESTORE);
+            if(_loadingForm != null)
+            {
+                _loadingForm.WindowState = FormWindowState.Normal;
+            }
         }
 
         private void PrepareChart()
@@ -448,8 +452,8 @@ namespace Sales_Manager
                     {
                         var transaction = (Transaction)transactionObject;
                         transaction.Remove();
-                        dateTimePicker_ValueChanged(sender, e);
                     }
+                    dateTimePicker_ValueChanged(sender, e);
                 }
             }
         }
@@ -653,13 +657,12 @@ namespace Sales_Manager
 
         private void toolStripButtonUpdate_Click(object sender, EventArgs e)
         {
-            if (!_lock)
+            if (_loadingForm == null)
             {
-                _lock = true;
                 var totalTransactions = objectListViewTransactions.Items.Count;
-                var loadingForm = new GetSales(dateTimePickerFrom.Value, dateTimePickerTo.Value,
-                    (Account)comboBoxAccounts.SelectedItem);
-                if (loadingForm.ShowDialog().Equals(DialogResult.OK))
+                _loadingForm = new GetSales(dateTimePickerFrom.Value, dateTimePickerTo.Value,
+                    (Account)comboBoxAccounts.SelectedItem, WindowState != FormWindowState.Normal);
+                if (_loadingForm.ShowDialog(this).Equals(DialogResult.OK))
                 {
                     toolStripButtonEdit.Enabled = false;
                     toolStripButtonRemove.Enabled = false;
@@ -667,27 +670,22 @@ namespace Sales_Manager
                     GetCountriesList();
                     GetProductsList();
                     RefreshProductsComboBox();
-                    var newSales = objectListViewTransactions.Items.Count - totalTransactions;
-                    if (notifyIcon.Visible && newSales > 0)
+                    var newTransactions = objectListViewTransactions.Items.Count - totalTransactions;
+                    if (notifyIcon.Visible && newTransactions > 0)
                     {
-                        notifyIcon.ShowBalloonTip(5, "New Sales", $"There are {newSales} new sales since you last updated.", ToolTipIcon.Info);
+                        notifyIcon.ShowBalloonTip(5, "New Transactions", $"There are {newTransactions} new transactions since you last updated.", ToolTipIcon.Info);
                     }
-                    _lock = false;
                 }
                 else
                 {
-                    _lock = false;
-                    if (!sender.Equals(_timer))
+                    if (WindowState == FormWindowState.Normal)
                     {
                         MessageBox.Show(Resources.noInternetErrorMsg, Resources.noInternetErrorCaption,
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
-                    else
-                    {
-                        toolStripButtonUpdate_Click(sender, e);
-                    }
                 }
+                _loadingForm = null;
             }
         }
 

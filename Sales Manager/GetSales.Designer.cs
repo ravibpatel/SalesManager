@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetSales));
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.labelInfo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // progressBar
@@ -41,12 +41,12 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             // 
-            // pictureBox1
+            // pictureBoxIcon
             // 
-            this.pictureBox1.Image = global::Sales_Manager.Properties.Resources.update_48;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxIcon.Image = global::Sales_Manager.Properties.Resources.update_48;
+            resources.ApplyResources(this.pictureBoxIcon, "pictureBoxIcon");
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.TabStop = false;
             // 
             // labelInfo
             // 
@@ -59,7 +59,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
             this.Controls.Add(this.labelInfo);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxIcon);
             this.Controls.Add(this.progressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
@@ -67,7 +67,7 @@
             this.Name = "GetSales";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,7 +76,7 @@
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxIcon;
         private System.Windows.Forms.Label labelInfo;
     }
 }

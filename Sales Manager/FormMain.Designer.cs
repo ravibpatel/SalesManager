@@ -668,6 +668,7 @@
             this.objectListViewCountries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.objectListViewCountries.FullRowSelect = true;
             this.objectListViewCountries.Location = new System.Drawing.Point(3, 3);
+            this.objectListViewCountries.MultiSelect = false;
             this.objectListViewCountries.Name = "objectListViewCountries";
             this.objectListViewCountries.ShowGroups = false;
             this.objectListViewCountries.Size = new System.Drawing.Size(897, 530);
@@ -722,6 +723,7 @@
             this.objectListViewProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.objectListViewProducts.FullRowSelect = true;
             this.objectListViewProducts.Location = new System.Drawing.Point(3, 3);
+            this.objectListViewProducts.MultiSelect = false;
             this.objectListViewProducts.Name = "objectListViewProducts";
             this.objectListViewProducts.ShowGroups = false;
             this.objectListViewProducts.Size = new System.Drawing.Size(897, 530);
@@ -795,6 +797,7 @@
             this.objectListViewAccounts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.objectListViewAccounts.FullRowSelect = true;
             this.objectListViewAccounts.Location = new System.Drawing.Point(3, 3);
+            this.objectListViewAccounts.MultiSelect = false;
             this.objectListViewAccounts.Name = "objectListViewAccounts";
             this.objectListViewAccounts.ShowGroups = false;
             this.objectListViewAccounts.Size = new System.Drawing.Size(897, 530);
@@ -965,7 +968,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1053,7 +1056,7 @@
             // 
             this.helpToolStripMenuItem.Image = global::Sales_Manager.Properties.Resources.book;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -1061,7 +1064,7 @@
             // 
             this.supportToolStripMenuItem.Image = global::Sales_Manager.Properties.Resources.comment_box;
             this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            this.supportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.supportToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.supportToolStripMenuItem.Text = "Support";
             this.supportToolStripMenuItem.Click += new System.EventHandler(this.supportToolStripMenuItem_Click);
             // 
@@ -1069,7 +1072,7 @@
             // 
             this.aboutToolStripMenuItem.Image = global::Sales_Manager.Properties.Resources.info_rhombus;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
