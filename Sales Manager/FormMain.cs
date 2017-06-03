@@ -25,14 +25,14 @@ namespace Sales_Manager
 
         public FormMain()
         {
-            #if DEBUG
-                var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "RBSoft",
-                    "Sales Manager", "database.smdb");
-                if (File.Exists(databasePath))
-                {
-                    File.Delete(databasePath);
-                }
-            #endif
+            //#if DEBUG
+            //    var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "RBSoft",
+            //        "Sales Manager", "database.smdb");
+            //    if (File.Exists(databasePath))
+            //    {
+            //        File.Delete(databasePath);
+            //    }
+            //#endif
 
             InitializeComponent();
             dateTimePickerFrom.Value = new DateTime(dateTimePickerTo.Value.Year, dateTimePickerTo.Value.Month, 1, 0, 0,
@@ -661,7 +661,7 @@ namespace Sales_Manager
             {
                 var totalTransactions = objectListViewTransactions.Items.Count;
                 _loadingForm = new GetSales(dateTimePickerFrom.Value, dateTimePickerTo.Value,
-                    (Account)comboBoxAccounts.SelectedItem, WindowState != FormWindowState.Normal);
+                    (Account)comboBoxAccounts.SelectedItem, WindowState == FormWindowState.Minimized);
                 if (_loadingForm.ShowDialog(this).Equals(DialogResult.OK))
                 {
                     toolStripButtonEdit.Enabled = false;
@@ -678,7 +678,7 @@ namespace Sales_Manager
                 }
                 else
                 {
-                    if (WindowState == FormWindowState.Normal)
+                    if (WindowState != FormWindowState.Minimized)
                     {
                         MessageBox.Show(Resources.noInternetErrorMsg, Resources.noInternetErrorCaption,
                             MessageBoxButtons.OK,
