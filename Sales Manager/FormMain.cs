@@ -783,9 +783,20 @@ namespace Sales_Manager
                                 cancelledTransactions.Add(transaction.OrderID + transaction.Product.ID, transaction);
                             }
                         }
-                        labelTotalSales.Text = transactions.Count(
-                                    transaction => transaction.ReceivedAmount >= 0 && !transaction.Product.ID.Equals(2) && !cancelledTransactions.ContainsKey(transaction.OrderID + transaction.Product.ID))
-                                .ToString();
+                        int count = 0;
+                        foreach (var transaction in transactions)
+                        {
+                            if (transaction.ReceivedAmount >= 0 && !transaction.Product.ID.Equals(2))
+                            {
+                                if (cancelledTransactions.ContainsKey(transaction.OrderID + transaction.Product.ID))
+                                {
+                                    cancelledTransactions.Remove(transaction.OrderID + transaction.Product.ID);
+                                    continue;
+                                }
+                                count++;
+                            }
+                        }
+                        labelTotalSales.Text = count.ToString();
                         if (sender.Equals(comboBoxAccounts))
                         {
                             RefreshProductsComboBox();
