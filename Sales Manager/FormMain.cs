@@ -363,7 +363,8 @@ namespace Sales_Manager
         private void objectListViewTransactions_SelectedIndexChanged(object sender, EventArgs e)
         {
             editTransactionToolStripMenuItem.Enabled = toolStripButtonEdit.Enabled =
-                removeTransactionToolStripMenuItem.Enabled = toolStripButtonRemove.Enabled =
+                objectListViewTransactions.SelectedObject != null;
+            removeTransactionToolStripMenuItem.Enabled = toolStripButtonRemove.Enabled =
                     objectListViewTransactions.SelectedObjects.Count > 0;
         }
 
