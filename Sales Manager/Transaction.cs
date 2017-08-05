@@ -258,7 +258,7 @@ namespace Sales_Manager
                     {
                         transaction.Tax += (double)jToken["us_rwt"];
                     }
-                    if (type.Equals("Author Fee"))
+                    if (type.Equals("Author Fee") || type.Equals("Author Fee Refund") || type.Equals("Author Fee Reversal"))
                     {
                         transaction.PriceAfterAuthorFee += Math.Abs((double)jToken["amount"]);
                     }
@@ -279,6 +279,24 @@ namespace Sales_Manager
                     transaction.PriceAfterAuthorFee = transaction.PriceAfterBuyerFee -
                                                       transaction.PriceAfterAuthorFee;
                     transaction.GetPartnerShare();
+                    if (transaction.ReceivedAmount < 0)
+                    {
+                        var refundedTransaction =
+                            db.Transactions.FirstOrDefault(
+                                tr => tr.OrderID.Equals(transaction.OrderID) &&
+                                      tr.Product.ID.Equals(transaction.Product.ID) &&
+                                      tr.PriceAfterAuthorFee.Equals(transaction.PriceAfterAuthorFee)) ??
+                            transactions.FirstOrDefault(
+                                tr => tr.OrderID.Equals(transaction.OrderID) &&
+                                      tr.Product.ID.Equals(transaction.Product.ID) &&
+                                      tr.PriceAfterAuthorFee.Equals(transaction.PriceAfterAuthorFee));
+                        if (refundedTransaction != null)
+                        {
+                            transaction.ReceivedAmount = refundedTransaction.ReceivedAmount * -1;
+                            transaction.PartnerShare = refundedTransaction.PartnerShare * -1;
+                            transaction.Detail += $" (Original Order was from {refundedTransaction.Date.ToShortDateString()})";
+                        }
+                    }
                     db.Transactions.Add(transaction);
                 }
                 db.SaveChanges();
