@@ -704,6 +704,13 @@ namespace Sales_Manager
 
         #region Other Events
 
+        private void filterTextBox_TextChanged(object sender, EventArgs e)
+        {
+            objectListViewTransactions.ModelFilter = TextMatchFilter.Contains(objectListViewTransactions,
+                filterTextBox.Text);
+
+        }
+
         private void pictureBoxDonate_Click(object sender, EventArgs e)
         {
             try

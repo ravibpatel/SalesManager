@@ -171,6 +171,9 @@
     <Compile Include="AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilterTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GetSales.cs">
       <SubType>Form</SubType>
     </Compile>

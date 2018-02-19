@@ -67,6 +67,8 @@
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
             this.groupBoxProducts = new System.Windows.Forms.GroupBox();
             this.comboBoxProducts = new System.Windows.Forms.ComboBox();
+            this.splitContainerFilter = new System.Windows.Forms.SplitContainer();
+            this.filterTextBox = new New_Menu_Editor.FilterTextBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageTransactions = new System.Windows.Forms.TabPage();
             this.objectListViewTransactions = new BrightIdeasSoftware.ObjectListView();
@@ -145,6 +147,10 @@
             this.groupBoxIncome.SuspendLayout();
             this.groupBoxMonthYear.SuspendLayout();
             this.groupBoxProducts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerFilter)).BeginInit();
+            this.splitContainerFilter.Panel1.SuspendLayout();
+            this.splitContainerFilter.Panel2.SuspendLayout();
+            this.splitContainerFilter.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewTransactions)).BeginInit();
@@ -318,7 +324,7 @@
             // 
             // splitContainer.Panel2
             // 
-            this.splitContainer.Panel2.Controls.Add(this.tabControl);
+            this.splitContainer.Panel2.Controls.Add(this.splitContainerFilter);
             this.splitContainer.Size = new System.Drawing.Size(1127, 562);
             this.splitContainer.SplitterDistance = 212;
             this.splitContainer.TabIndex = 1;
@@ -449,7 +455,7 @@
             this.dateTimePickerFrom.Location = new System.Drawing.Point(6, 19);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(148, 20);
-            this.dateTimePickerFrom.TabIndex = 1;
+            this.dateTimePickerFrom.TabIndex = 0;
             this.dateTimePickerFrom.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // dateTimePickerTo
@@ -459,7 +465,7 @@
             this.dateTimePickerTo.Location = new System.Drawing.Point(6, 48);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(148, 20);
-            this.dateTimePickerTo.TabIndex = 0;
+            this.dateTimePickerTo.TabIndex = 1;
             this.dateTimePickerTo.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // groupBoxProducts
@@ -482,6 +488,36 @@
             this.comboBoxProducts.TabIndex = 0;
             this.comboBoxProducts.SelectedIndexChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
+            // splitContainerFilter
+            // 
+            this.splitContainerFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerFilter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainerFilter.IsSplitterFixed = true;
+            this.splitContainerFilter.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerFilter.Name = "splitContainerFilter";
+            this.splitContainerFilter.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainerFilter.Panel1
+            // 
+            this.splitContainerFilter.Panel1.Controls.Add(this.filterTextBox);
+            // 
+            // splitContainerFilter.Panel2
+            // 
+            this.splitContainerFilter.Panel2.Controls.Add(this.tabControl);
+            this.splitContainerFilter.Size = new System.Drawing.Size(911, 562);
+            this.splitContainerFilter.SplitterDistance = 25;
+            this.splitContainerFilter.TabIndex = 0;
+            // 
+            // filterTextBox
+            // 
+            this.filterTextBox.ClearButtonImage = global::Sales_Manager.Properties.Resources.cross;
+            this.filterTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filterTextBox.Location = new System.Drawing.Point(0, 0);
+            this.filterTextBox.Name = "filterTextBox";
+            this.filterTextBox.Size = new System.Drawing.Size(911, 20);
+            this.filterTextBox.TabIndex = 0;
+            this.filterTextBox.TextChanged += new System.EventHandler(this.filterTextBox_TextChanged);
+            // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPageTransactions);
@@ -493,7 +529,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(911, 562);
+            this.tabControl.Size = new System.Drawing.Size(911, 533);
             this.tabControl.TabIndex = 0;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -503,7 +539,7 @@
             this.tabPageTransactions.Location = new System.Drawing.Point(4, 22);
             this.tabPageTransactions.Name = "tabPageTransactions";
             this.tabPageTransactions.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTransactions.Size = new System.Drawing.Size(903, 536);
+            this.tabPageTransactions.Size = new System.Drawing.Size(903, 507);
             this.tabPageTransactions.TabIndex = 0;
             this.tabPageTransactions.Text = "Transactions";
             this.tabPageTransactions.UseVisualStyleBackColor = true;
@@ -547,7 +583,7 @@
             this.objectListViewTransactions.Name = "objectListViewTransactions";
             this.objectListViewTransactions.ShowCommandMenuOnRightClick = true;
             this.objectListViewTransactions.ShowItemCountOnGroups = true;
-            this.objectListViewTransactions.Size = new System.Drawing.Size(897, 530);
+            this.objectListViewTransactions.Size = new System.Drawing.Size(897, 501);
             this.objectListViewTransactions.TabIndex = 0;
             this.objectListViewTransactions.UseCompatibleStateImageBehavior = false;
             this.objectListViewTransactions.UseFilterIndicator = true;
@@ -650,7 +686,7 @@
             this.tabPageCountries.Location = new System.Drawing.Point(4, 22);
             this.tabPageCountries.Name = "tabPageCountries";
             this.tabPageCountries.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCountries.Size = new System.Drawing.Size(903, 536);
+            this.tabPageCountries.Size = new System.Drawing.Size(903, 507);
             this.tabPageCountries.TabIndex = 1;
             this.tabPageCountries.Text = "Countries";
             this.tabPageCountries.UseVisualStyleBackColor = true;
@@ -671,7 +707,7 @@
             this.objectListViewCountries.MultiSelect = false;
             this.objectListViewCountries.Name = "objectListViewCountries";
             this.objectListViewCountries.ShowGroups = false;
-            this.objectListViewCountries.Size = new System.Drawing.Size(897, 530);
+            this.objectListViewCountries.Size = new System.Drawing.Size(897, 501);
             this.objectListViewCountries.TabIndex = 0;
             this.objectListViewCountries.UseCompatibleStateImageBehavior = false;
             this.objectListViewCountries.View = System.Windows.Forms.View.Details;
@@ -697,7 +733,7 @@
             this.tabPageProducts.Location = new System.Drawing.Point(4, 22);
             this.tabPageProducts.Name = "tabPageProducts";
             this.tabPageProducts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProducts.Size = new System.Drawing.Size(903, 536);
+            this.tabPageProducts.Size = new System.Drawing.Size(903, 507);
             this.tabPageProducts.TabIndex = 2;
             this.tabPageProducts.Text = "Products";
             this.tabPageProducts.UseVisualStyleBackColor = true;
@@ -726,7 +762,7 @@
             this.objectListViewProducts.MultiSelect = false;
             this.objectListViewProducts.Name = "objectListViewProducts";
             this.objectListViewProducts.ShowGroups = false;
-            this.objectListViewProducts.Size = new System.Drawing.Size(897, 530);
+            this.objectListViewProducts.Size = new System.Drawing.Size(897, 501);
             this.objectListViewProducts.TabIndex = 0;
             this.objectListViewProducts.UseCompatibleStateImageBehavior = false;
             this.objectListViewProducts.View = System.Windows.Forms.View.Details;
@@ -779,7 +815,7 @@
             this.tabPageAccounts.Location = new System.Drawing.Point(4, 22);
             this.tabPageAccounts.Name = "tabPageAccounts";
             this.tabPageAccounts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAccounts.Size = new System.Drawing.Size(903, 536);
+            this.tabPageAccounts.Size = new System.Drawing.Size(903, 507);
             this.tabPageAccounts.TabIndex = 4;
             this.tabPageAccounts.Text = "Accounts";
             this.tabPageAccounts.UseVisualStyleBackColor = true;
@@ -800,7 +836,7 @@
             this.objectListViewAccounts.MultiSelect = false;
             this.objectListViewAccounts.Name = "objectListViewAccounts";
             this.objectListViewAccounts.ShowGroups = false;
-            this.objectListViewAccounts.Size = new System.Drawing.Size(897, 530);
+            this.objectListViewAccounts.Size = new System.Drawing.Size(897, 501);
             this.objectListViewAccounts.TabIndex = 1;
             this.objectListViewAccounts.UseCompatibleStateImageBehavior = false;
             this.objectListViewAccounts.View = System.Windows.Forms.View.Details;
@@ -827,7 +863,7 @@
             this.tabPageGraph.Location = new System.Drawing.Point(4, 22);
             this.tabPageGraph.Name = "tabPageGraph";
             this.tabPageGraph.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGraph.Size = new System.Drawing.Size(903, 536);
+            this.tabPageGraph.Size = new System.Drawing.Size(903, 507);
             this.tabPageGraph.TabIndex = 3;
             this.tabPageGraph.Text = "Graph";
             this.tabPageGraph.UseVisualStyleBackColor = true;
@@ -847,7 +883,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart.Series.Add(series1);
-            this.chart.Size = new System.Drawing.Size(897, 530);
+            this.chart.Size = new System.Drawing.Size(897, 501);
             this.chart.TabIndex = 0;
             this.chart.GetToolTipText += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs>(this.chart_GetToolTipText);
             // 
@@ -1147,6 +1183,11 @@
             this.groupBoxIncome.PerformLayout();
             this.groupBoxMonthYear.ResumeLayout(false);
             this.groupBoxProducts.ResumeLayout(false);
+            this.splitContainerFilter.Panel1.ResumeLayout(false);
+            this.splitContainerFilter.Panel1.PerformLayout();
+            this.splitContainerFilter.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerFilter)).EndInit();
+            this.splitContainerFilter.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPageTransactions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.objectListViewTransactions)).EndInit();
@@ -1272,6 +1313,8 @@
         private System.Windows.Forms.TabPage tabPageGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private System.Windows.Forms.PictureBox pictureBoxDonate;
+        private System.Windows.Forms.SplitContainer splitContainerFilter;
+        private New_Menu_Editor.FilterTextBox filterTextBox;
     }
 }
 

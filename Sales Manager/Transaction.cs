@@ -248,7 +248,7 @@ namespace Sales_Manager
                             }
                         }
                     }
-                    if (detail.Contains("extended support") || detail.Contains("support extension"))
+                    if (detail.Contains("extended support") || detail.Contains("support extension") || detail.Contains("renewed support") || detail.Contains("support renewal"))
                     {
                         transaction.SupportAmount += (double)jToken["amount"];
                         backgroundWorker.ReportProgress(count + 1, jOrderInfoArray.Count, 1);
@@ -271,7 +271,7 @@ namespace Sales_Manager
                 }
                 foreach (var transaction in transactions)
                 {
-                    if (transaction.Detail.ToLower().Contains("extended support") && !transaction.Detail.ToLower().Contains("included support"))
+                    if (transaction.Detail.ToLower().Contains("extended support") && !transaction.Detail.ToLower().Contains("included support") || transaction.Detail.ToLower().Contains("renewed support"))
                     {
                         db.Transactions.Add(transaction);
                         continue;
