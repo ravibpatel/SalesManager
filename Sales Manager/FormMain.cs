@@ -113,6 +113,7 @@ namespace Sales_Manager
             };
             _timer.Tick += toolStripButtonUpdate_Click;
             _timer.Start();
+            filterTextBox.Select();
         }
 
         private void FormMain_Shown(object sender, EventArgs e)
