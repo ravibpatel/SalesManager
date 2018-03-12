@@ -39,7 +39,7 @@ namespace Sales_Manager
         private void About_Load(object sender, EventArgs e)
         {
             labelName.Text = $@"{Application.ProductName} {Application.ProductVersion}";
-            labelCopyright.Text = $@"Copyright © 2017 {Application.CompanyName}";
+            labelCopyright.Text = $@"Copyright © 2017-{DateTime.Now.Year} {Application.CompanyName}";
         }
 
         private void richTextBoxCredits_LinkClicked(object sender, LinkClickedEventArgs e)

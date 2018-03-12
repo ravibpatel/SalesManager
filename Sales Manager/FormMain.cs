@@ -125,7 +125,7 @@ namespace Sales_Manager
             RefreshProductsComboBox();
             if (Settings.Default.EnableUpdateNotification)
             {
-                AutoUpdater.Start("http://rbsoft.org/updates/sales-manager.xml");
+                AutoUpdater.Start("https://rbsoft.org/updates/sales-manager.xml");
             }
         }
 

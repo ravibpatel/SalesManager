@@ -39,14 +39,18 @@
     <ApplicationIcon>Sales Manager.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Sales Manager.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Sales Manager.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoUpdater.NET, Version=1.4.7.0, Culture=neutral, PublicKeyToken=942f95247e354701, processorArchitecture=MSIL">
       <HintPath>..\packages\Autoupdater.NET.Official.1.4.7\lib\net452\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Data.Sqlite, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Sqlite.1.1.1\lib\net451\Microsoft.Data.Sqlite.dll</HintPath>
@@ -239,7 +243,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Sales Manager.pfx" />
+    <None Include="Help.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -252,6 +258,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Sales Manager.snk" />
+    <None Include="Setup\Sales Manager.nsi" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -269,6 +277,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PayPal Donate.png" />
+    <None Include="FodyWeavers.xml" />
+    <Content Include="License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sales Manager.ico" />
     <None Include="Resources\envato_market_api.png" />
     <None Include="Resources\Sales Manager Icon.png" />
@@ -288,7 +300,11 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLite.3.13.0\build\net45\SQLite.props'))" />
+    <Error Condition="!Exists('..\packages\Fody.2.0.0\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.0.0\build\dotnet\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
   </Target>
+  <Import Project="..\packages\Fody.2.0.0\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.2.0.0\build\dotnet\Fody.targets')" />
+  <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
