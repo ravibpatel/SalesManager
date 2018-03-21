@@ -117,7 +117,8 @@ namespace Sales_Manager
                         using (var streamReader = new StreamReader(responseStream))
                         {
                             var orderInfoJson = streamReader.ReadToEnd();
-                            var tempJArray = JArray.Parse(orderInfoJson);
+                            JObject jObject = JObject.Parse(orderInfoJson);
+                            var tempJArray = JArray.Parse(jObject["results"].ToString());
                             jOrderInfoArray.Merge(tempJArray);
                             if (tempJArray.Count.Equals(0))
                             {
