@@ -1,4 +1,4 @@
-version: 1.0.5.{build}
+version: 1.0.7.{build}
 skip_branch_with_pr: true
 image: Visual Studio 2017
 
@@ -44,7 +44,7 @@ artifacts:
 
 deploy:
   release: $(APPVEYOR_REPO_TAG_NAME)
-  description: '// TODO: Writing Release Notes'
+  description: '// TODO: Write Release Notes'
   provider: GitHub
   auth_token:
     secure: WHW27Nvc8zNhfyhxIYdl/NwbrkFzvSX0vE4/CS8iByPXM6rcztWhUrDXJ7eejLBY
