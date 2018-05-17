@@ -140,7 +140,7 @@ namespace Sales_Manager
                 {
                     var jToken = jOrderInfoArray[count];
                     var type = jToken["type"].ToString();
-                    if (type.Equals("Withdrawal Request") || type.Equals("Skrill Fee") || type.Equals("Refund") ||
+                    if (type.Equals("Withdrawal Request") || type.Equals("Skrill Fee") || type.Equals("Refund") || type.Equals("Payout") ||
                         type.Equals("Withdrawal Cancellation") || type.Equals("Skrill Fee Reversal") ||
                         type.Equals("Purchase") || type.Equals("Agreement Change") || type.Equals("Manual Adjustment") || type.Equals("Withdrawal Rejection"))
                     {
