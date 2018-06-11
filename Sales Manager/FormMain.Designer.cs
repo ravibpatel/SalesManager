@@ -369,7 +369,7 @@
             this.groupBoxTotalSales.Size = new System.Drawing.Size(160, 60);
             this.groupBoxTotalSales.TabIndex = 19;
             this.groupBoxTotalSales.TabStop = false;
-            this.groupBoxTotalSales.Text = "Total Sales";
+            this.groupBoxTotalSales.Text = "Item Sales";
             // 
             // labelTotalSales
             // 

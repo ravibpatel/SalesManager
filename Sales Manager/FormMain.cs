@@ -793,7 +793,7 @@ namespace Sales_Manager
                         int count = 0;
                         foreach (var transaction in transactions)
                         {
-                            if (transaction.ReceivedAmount >= 0 && !transaction.Product.ID.Equals(2))
+                            if (transaction.ReceivedAmount > 0 && !transaction.Product.ID.Equals(2))
                             {
                                 if (cancelledTransactions.ContainsKey(transaction.OrderID + transaction.Product.ID))
                                 {
