@@ -12,7 +12,7 @@ VIProductVersion 1.0.8.0
 
 VIAddVersionKey ProductName "${PRODUCT_NAME}"
 VIAddVersionKey CompanyName "${PRODUCT_PUBLISHER}"
-VIAddVersionKey LegalCopyright "Copyright © 2017-2018 RBSoft"
+VIAddVersionKey LegalCopyright "Copyright © 2017-2019 RBSoft"
 VIAddVersionKey FileVersion ${PRODUCT_VERSION}
 VIAddVersionKey FileDescription "Sales Manager - Track your Envato market sales"
 VIAddVersionKey ProductVersion ${PRODUCT_VERSION}
