@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -136,8 +137,9 @@ namespace Sales_Manager
                         }
                     }
                 }
-                catch (WebException)
+                catch (WebException exception)
                 {
+                    Debug.WriteLine(exception);
                     return false;
                 }
             }

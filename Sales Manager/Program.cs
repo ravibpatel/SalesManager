@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -25,6 +26,12 @@ namespace Sales_Manager
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                try
+                {
+                    ServicePointManager.SecurityProtocol |= (SecurityProtocolType)192 |
+                                                            (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+                }
+                catch (NotSupportedException) { }
                 Application.Run(new FormMain());
                 mutex.ReleaseMutex();
             }
