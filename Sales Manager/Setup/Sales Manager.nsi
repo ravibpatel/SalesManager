@@ -2,8 +2,8 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Sales Manager"
-!define PRODUCT_VERSION "1.0.7"
-VIProductVersion 1.0.7.0
+!define PRODUCT_VERSION "1.0.8"
+VIProductVersion 1.0.8.0
 !define PRODUCT_PUBLISHER "RBSoft Inc."
 !define PRODUCT_WEB_SITE "http://www.rbsoft.org"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Sales Manager.exe"
