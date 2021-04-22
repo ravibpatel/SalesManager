@@ -785,7 +785,7 @@ namespace Sales_Manager
                         var cancelledTransactions = new Dictionary<string, Transaction>();
                         foreach (var transaction in transactions.ToList())
                         {
-                            if (transaction.ReceivedAmount < 0)
+                            if (transaction.ReceivedAmount < 0 && !cancelledTransactions.ContainsKey(transaction.OrderID + transaction.Product.ID))
                             {
                                 cancelledTransactions.Add(transaction.OrderID + transaction.Product.ID, transaction);
                             }
