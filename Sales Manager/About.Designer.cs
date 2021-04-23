@@ -70,7 +70,7 @@
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(174, 15);
             this.labelCopyright.TabIndex = 2;
-            this.labelCopyright.Text = "Copyright © 2013-2018 RBSoft";
+            this.labelCopyright.Text = "Copyright © 2013-2021 RBSoft";
             // 
             // labelLicense
             // 

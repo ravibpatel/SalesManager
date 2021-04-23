@@ -51,7 +51,6 @@
             this.editAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.pictureBoxDonate = new System.Windows.Forms.PictureBox();
             this.groupBoxAccount = new System.Windows.Forms.GroupBox();
             this.comboBoxAccounts = new System.Windows.Forms.ComboBox();
             this.groupBoxTotalSales = new System.Windows.Forms.GroupBox();
@@ -139,7 +138,6 @@
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDonate)).BeginInit();
             this.groupBoxAccount.SuspendLayout();
             this.groupBoxTotalSales.SuspendLayout();
             this.groupBoxTotal.SuspendLayout();
@@ -313,7 +311,6 @@
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.pictureBoxDonate);
             this.splitContainer.Panel1.Controls.Add(this.groupBoxAccount);
             this.splitContainer.Panel1.Controls.Add(this.groupBoxTotalSales);
             this.splitContainer.Panel1.Controls.Add(this.groupBoxTotal);
@@ -328,18 +325,6 @@
             this.splitContainer.Size = new System.Drawing.Size(1127, 562);
             this.splitContainer.SplitterDistance = 212;
             this.splitContainer.TabIndex = 1;
-            // 
-            // pictureBoxDonate
-            // 
-            this.pictureBoxDonate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxDonate.Image = global::Sales_Manager.Properties.Resources.PayPal_Donate;
-            this.pictureBoxDonate.Location = new System.Drawing.Point(12, 464);
-            this.pictureBoxDonate.Name = "pictureBoxDonate";
-            this.pictureBoxDonate.Size = new System.Drawing.Size(160, 75);
-            this.pictureBoxDonate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxDonate.TabIndex = 21;
-            this.pictureBoxDonate.TabStop = false;
-            this.pictureBoxDonate.Click += new System.EventHandler(this.pictureBoxDonate_Click);
             // 
             // groupBoxAccount
             // 
@@ -1171,7 +1156,6 @@
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDonate)).EndInit();
             this.groupBoxAccount.ResumeLayout(false);
             this.groupBoxTotalSales.ResumeLayout(false);
             this.groupBoxTotalSales.PerformLayout();
@@ -1312,7 +1296,6 @@
         private BrightIdeasSoftware.OLVColumn olvColumnAccountAPIKey;
         private System.Windows.Forms.TabPage tabPageGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
-        private System.Windows.Forms.PictureBox pictureBoxDonate;
         private System.Windows.Forms.SplitContainer splitContainerFilter;
         private New_Menu_Editor.FilterTextBox filterTextBox;
     }

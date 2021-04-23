@@ -16,7 +16,7 @@ namespace Sales_Manager
         {
             try
             {
-                Process.Start("http://rbsoft.org");
+                Process.Start("https://rbsoft.org");
             }
             catch (Exception exception)
             {

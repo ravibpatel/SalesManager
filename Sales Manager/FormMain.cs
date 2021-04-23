@@ -712,18 +712,6 @@ namespace Sales_Manager
 
         }
 
-        private void pictureBoxDonate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Process.Start("https://www.paypal.me/rbsoft");
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, exception.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             if (sender.Equals(dateTimePickerTo))

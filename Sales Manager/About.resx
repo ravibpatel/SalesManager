@@ -117,23 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBoxLicense.Text" xml:space="preserve">
-    <value>Sales Manager - Track your Envato market sales
-RBSoft
-http://rbsoft.org
-http://rbsoft.uservoice.com
-https://github.com/ravibpatel/SalesManager
-
-MIT License
-
-Copyright (c) 2017-2018 RBSoft
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
-  </data>
   <data name="richTextBoxCredits.Text" xml:space="preserve">
     <value>Author :- Ravi.B.Patel
 
@@ -142,30 +125,30 @@ Special thanks to my family for supporting me all the time.
 
 ------------------------------------------------------------------
 Special thanks to Philip Piper, author of ObjectListView.
-http://objectlistview.sourceforge.net/
+https://objectlistview.sourceforge.net/
 
 ------------------------------------------------------------------
 Special thanks to Don Kirkby, author of WindowSettings class
 that handles saving and restoring of application window state.
-http://code.google.com/p/donkirkby/source/browse/trunk/WindowSettings/WindowSettings.cs
+https://code.google.com/p/donkirkby/source/browse/trunk/WindowSettings/WindowSettings.cs
 License: MIT License
-http://opensource.org/licenses/mit-license.php
+https://opensource.org/licenses/mit-license.php
 
 ------------------------------------------------------------------
 Special thanks to FatCow, author of FatCow Web Hosting! Icon set
-http://www.fatcow.com/free-icons
+https://www.fatcow.com/free-icons
 License: Creative Commons Attribution 3.0
-http://creativecommons.org/licenses/by/3.0/us/
+https://creativecommons.org/licenses/by/3.0/us/
 
 ------------------------------------------------------------------
 Special thanks to PixelMixer, author of Basic Icons Set
-http://pixel-mixer.com/
-License: http://www.iconarchive.com/icons/pixelmixer/basic/license.txt
+https://pixel-mixer.com/
+License: https://www.iconarchive.com/icons/pixelmixer/basic/license.txt
 
 ------------------------------------------------------------------
 Special thanks to Freepik, author of Business Productivity Icons Set
-http://www.flaticon.com/packs/business-productivity
-License: http://file000.flaticon.com/downloads/license/license.pdf
+https://www.flaticon.com/packs/business-productivity
+License: https://file000.flaticon.com/downloads/license/license.pdf
 
 ------------------------------------------------------------------
 Special thanks to Perfectus Inc, author of some awesome themes and plugins on Envato Market
@@ -174,5 +157,22 @@ https://themeforest.net/user/perfectusinc
 ------------------------------------------------------------------
 Special thanks to PressLayouts, author of some awesome themes on ThemeForest
 https://themeforest.net/user/presslayouts</value>
+  </data>
+  <data name="richTextBoxLicense.Text" xml:space="preserve">
+    <value>Sales Manager - Track your Envato market sales
+RBSoft
+https://rbsoft.org
+https://rbsoft.uservoice.com
+https://github.com/ravibpatel/SalesManager
+
+MIT License
+
+Copyright (c) 2017-2021 RBSoft
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</value>
   </data>
 </root>
