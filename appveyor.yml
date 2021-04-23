@@ -32,7 +32,7 @@ install:
 # NSIS Plugin (NsisDotNetChecker)
 - appveyor DownloadFile https://github.com/ReVolly/NsisDotNetChecker/archive/master.zip
 - 7z e master.zip -o"C:\Program Files (x86)\NSIS\Include" DotNetChecker.nsh -r
-- 7z e master.zip -o"C:\Program Files (x86)\NSIS\Plugins\x86-ansi" DotNetChecker.dll -r
+- 7z e master.zip -o"C:\Program Files (x86)\NSIS\Plugins\x86-unicode" DotNetChecker.dll -r
 
 after_build:
 - cmd: 7z a Sales.Manager.Portable.zip "c:\projects\SalesManager\Sales Manager\bin\Release\"
